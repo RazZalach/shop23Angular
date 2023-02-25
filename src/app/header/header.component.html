@@ -1,0 +1,19 @@
+<nav class="product-filter">
+     <h1><a href="/" style="color: #E6A756; text-decoration: none;">מרכז הקפה והטבק</a></h1>
+    <div class="sort">
+        <div class="collection-sort">
+            <p style="color: #E6A756;" >סנן לפי</p>
+            <select (change)="filterCat()" [(ngModel)]="selectCat">
+                <option value=""> בחר קטגוריה</option>
+                <option *ngFor="let cat of categories" [value]="cat">{{cat}}</option>
+            </select>
+        </div>
+        <div class="collection-sort">
+            <p style="color: #E6A756;">מיין לפי</p>
+            <select (change)="sortBy()" [(ngModel)]="selectSort">
+                <option value=""> בחר מיון</option>
+                <option *ngFor="let sort of sortList; index as i" [value]="i">{{sort.name}}</option>
+            </select>
+        </div>
+    </div>
+</nav>

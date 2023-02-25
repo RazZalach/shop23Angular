@@ -1,0 +1,16 @@
+<section class="products">
+    <div class="product-card.one"> 
+    <button class="backBtn" (click)="goBack()">חזור אחורה</button>
+        <i *ngIf="product.isFavorite" class="fa fa-star favorite"></i>
+        <div class="product-image">
+            <img [src]="product.image"/>
+        </div>
+        <div class="product-details">
+            <h2>{{ product.title }}</h2>
+            <h5>{{product.price}}$</h5><br>
+            <p>תיאור המוצר: {{product.description}}</p><br>
+            <p  [class]="{popular:product.sellNo > 19,notPopular:product.sellNo < 20}" *ngIf="product.sellNo">כמות במלאי: {{product.sellNo}} </p><br>
+            <p>התווסף בתאריך: {{product.openDate.toString().slice(6,8)+"."+product.openDate.toString().slice(4,6)+"."+product.openDate.toString().slice(0,4)}}</p>
+        </div> 
+    </div>
+</section>    
